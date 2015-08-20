@@ -18,7 +18,7 @@ int tempo = 150;
 
 void setup() {
   // put your setup code here, to run once:
-  servo1.attach(9);
+  servo1.attach(6);
   servo2.attach(7);
 
   pinMode(buzzerPin, OUTPUT);
@@ -28,7 +28,7 @@ void setup() {
   {
     pinMode(ledPins[index],OUTPUT);
   }
-  servo2.write(10);
+  servo2.write(0);
   
 }
 
@@ -37,6 +37,8 @@ void loop() {
   //buttons();
   buttons2();
   //buttontest();
+
+  
 }
 
 void buttontest(){
@@ -44,6 +46,12 @@ void buttontest(){
   button1State = digitalRead(button1Pin);
   button2State = digitalRead(button2Pin);
   button2State = digitalRead(button3Pin);
+
+  while(button3State == LOW){
+    fire();
+    }
+
+  servo2.write(1);
 
   if(button1State == LOW){
     digitalWrite(11, HIGH);
@@ -72,13 +80,15 @@ void buttons2(){
   button3State = digitalRead(button3Pin);
 
   if(button1State == LOW){
-    servo1.write(10);
-    delay(1000);
+    servo1.write(93);
+    delay(50);
+    servo1.write(94);
     }
 
   if(button2State == LOW){
-    servo1.write(150);
-    delay(1000);
+    servo1.write(96);
+    delay(50);
+    servo1.write(94);
     }
 
    if(button3State == LOW){
@@ -142,7 +152,7 @@ void fire()
   servo2.write(100);    // Tell servo to go to 90 degrees
 
   delay(1000);         // Pause to get it time to move
-  servo2.write(10);
+  servo2.write(0);
 }
 
 void sirene() 
