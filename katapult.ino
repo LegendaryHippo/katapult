@@ -11,8 +11,8 @@ const int button3Pin = 4;
 
 const int buzzerPin = 8;
 const int songLength = 8;
-char notes[] = "abcdefghj";
-int beats[] = {2,2,2,2,2,2,2,2,2};
+char notes[] = "cdffa ag c";
+int beats[] = {1,1,1,1,1,1,4,4,1};
 int tempo = 150;
 
 
@@ -41,37 +41,37 @@ void loop() {
   
 }
 
-void buttontest(){
-  int button1State, button2State, button3State;
-  button1State = digitalRead(button1Pin);
-  button2State = digitalRead(button2Pin);
-  button2State = digitalRead(button3Pin);
-
-  while(button3State == LOW){
-    fire();
-    }
-
-  servo2.write(1);
-
-  if(button1State == LOW){
-    digitalWrite(11, HIGH);
-    }
-
-    else if (button2State == LOW){
-      digitalWrite(12, HIGH);
-      }
-
-    else if(button3State == LOW)
-    {
-      digitalWrite(13, HIGH);
-      }
-
-      else{
-//        digitalWrite(11, LOW);
-//        digitalWrite(12, LOW);
-//        digitalWrite(13, LOW);
-        }
-  }
+//void buttontest(){
+//  int button1State, button2State, button3State;
+//  button1State = digitalRead(button1Pin);
+//  button2State = digitalRead(button2Pin);
+//  button2State = digitalRead(button3Pin);
+//
+//  while(button3State == LOW){
+//    fire();
+//    }
+//
+//  servo2.write(1);
+//
+//  if(button1State == LOW){
+//    digitalWrite(11, HIGH);
+//    }
+//
+//    else if (button2State == LOW){
+//      digitalWrite(12, HIGH);
+//      }
+//
+//    else if(button3State == LOW)
+//    {
+//      digitalWrite(13, HIGH);
+//      }
+//
+//      else{
+////        digitalWrite(11, LOW);
+////        digitalWrite(12, LOW);
+////        digitalWrite(13, LOW);
+//        }
+//  }
 
 void buttons2(){
   int button1State, button2State, button3State;
